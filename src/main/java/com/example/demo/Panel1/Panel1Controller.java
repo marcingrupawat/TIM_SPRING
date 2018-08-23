@@ -36,7 +36,7 @@ public class Panel1Controller {
         List<JSONObject> jasonList = new ArrayList<JSONObject>();
         jasonList.add(panel1ServiceJason.StringListJason1());
         try {
-            ResponseEntity<String> responseEntity = new ResponseEntity<String>(String.valueOf(panel1ServiceJason.StringListJason1()), HttpStatus.OK);
+            ResponseEntity<String> responseEntity = new ResponseEntity<String>(String.valueOf(panel1ServiceJason.List2()), HttpStatus.OK);
             return responseEntity;
         } catch (Exception e) {
             return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
