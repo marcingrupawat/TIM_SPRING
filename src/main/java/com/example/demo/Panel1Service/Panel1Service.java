@@ -1,5 +1,6 @@
 package com.example.demo.Panel1Service;
 
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import static java.lang.String.*;
 public class Panel1Service {
 
     public List<Integer> listList = new ArrayList<Integer>();
+    JSONObject jasonObject = new JSONObject();
+    List<JSONObject> jasonList = new ArrayList<JSONObject>();
 
     public String StringList(){
         listList.clear();
@@ -24,9 +27,10 @@ public class Panel1Service {
             number = generator.nextInt(100);
             listList.add(number);
             listString = listString +" "+ String.valueOf(number);
+            jasonObject.put("ID",i);
+            jasonObject.put("NUMBER",number);
+            jasonList.add(jasonObject);
         }
         return listString;
     }
-
-
 }
