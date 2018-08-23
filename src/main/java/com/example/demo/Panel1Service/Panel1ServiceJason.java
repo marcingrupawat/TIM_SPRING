@@ -1,11 +1,10 @@
 package com.example.demo.Panel1Service;
+import com.google.gson.Gson;
 
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 
 @Service("RandomJason")
@@ -22,8 +21,7 @@ public class Panel1ServiceJason {
 
         for (int i=0;i<10;i++) {
             number = generator.nextInt(100);
-            //jasonObject.put("ID",String.valueOf(i));
-           // jasonObject.put("NUMBER",String.valueOf(number));
+
 
             map.put("ID",String.valueOf(i));
             map.put("NUMBER",String.valueOf(number));
@@ -34,4 +32,28 @@ public class Panel1ServiceJason {
         return jasonObject;
     }
 
+    public String List2() {
+
+        int number;
+        Random generator = new Random();
+
+        Gson gson = new Gson();
+
+        List<Numbers> list = new ArrayList<Numbers>();
+
+        // Defining 2 Product Object
+        Numbers p1 = new Numbers();
+
+        for (int i = 0; i < 10; i++) {
+            number = generator.nextInt(100);
+            p1.setIdNumber(i);
+            p1.setNumber(number);
+            list.add(p1);
+        }
+        // Covert List to Json
+
+        return gson.toJson(list);
+        }
 }
+
+
