@@ -42,14 +42,19 @@ public class Panel1ServiceJason {
         List<Numbers> list = new ArrayList<Numbers>();
 
         // Defining 2 Product Object
-        Numbers p1 = new Numbers();
 
-        for (int i = 0; i < 10; i++) {
+
+        for (int i = 1; i < 11; i++) {
+            Numbers p1 = new Numbers();
             number = generator.nextInt(100);
             p1.setIdNumber(i);
             p1.setNumber(number);
             list.add(p1);
+
+
         }
+
+
         // Covert List to Json
 
         return gson.toJson(list);

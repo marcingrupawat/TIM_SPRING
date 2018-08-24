@@ -7,14 +7,20 @@ public class Numbers {
 
     public void setNumber (int number) {
         this.number = number;
+
     }
 
     public void setIdNumber (int id) {
+
         this.id = id;
+
     }
 
 
     public int getIdNumber () {
         return id;
+    }
+    public int getNumber () {
+        return number;
     }
 }
